@@ -25,6 +25,7 @@ services:
       build:
         context: ./dcelery
         dockerfile: Dockerfile
+      command: celery --app=dcelery worker -l INFO
       volumes:
         - ./dcelery:/user/src/app/
       environment:
